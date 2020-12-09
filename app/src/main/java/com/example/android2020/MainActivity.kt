@@ -3,13 +3,14 @@ package com.example.android2020
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Adapter.OnItemClickListener {
     private val exampleList = generateDummyList(500)
-    private val adapter = Adapter(exampleList)
+    private val adapter = Adapter(exampleList, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +39,13 @@ class MainActivity : AppCompatActivity() {
 
         exampleList.removeAt(index)
         adapter.notifyItemRemoved(index)
+    }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this,"Item $position clicked", Toast.LENGTH_SHORT).show()
+        val clickedItem = exampleList[position]
+        clickedItem.text1 = "Clicked"
+        adapter.notifyItemChanged(position)
     }
 
     private fun generateDummyList(size: Int): ArrayList<ExampleItem> {

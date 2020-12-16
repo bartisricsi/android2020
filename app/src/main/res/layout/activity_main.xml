@@ -12,6 +12,7 @@
         android:id="@+id/appBarLayout">
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabTextAppearance="@style/CustomTabStyle"
@@ -23,41 +24,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="674dp"
-        android:layout_above="@id/buttons"
-        android:layout_marginBottom="-46dp"
-        android:clipToPadding="false"
-        android:padding="4dp"
-        tools:listitem="@layout/item">
 
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:padding="4dp"
-        android:clipToPadding="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Insert item"
-            android:layout_weight="1"
-            android:onClick="insertItem"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Remove item"
-            android:layout_weight="1"
-            android:onClick="removeItem"/>
-        
-    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

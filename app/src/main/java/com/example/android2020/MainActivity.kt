@@ -2,63 +2,32 @@ package com.example.android2020
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android2020.fragments.HomeFragment
+import com.example.android2020.fragments.ProfileFragment
+import com.example.android2020.fragments.adapters.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.random.Random
 
-class MainActivity : AppCompatActivity(), Adapter.OnItemClickListener {
-    private val exampleList = generateDummyList(500)
-    private val adapter = Adapter(exampleList, this)
+class MainActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recycler_view.adapter = adapter
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.setHasFixedSize(true)
+        setUpTabs()
+
     }
 
-    fun insertItem(view: View){
-        val index =  Random.nextInt(8)
+    private fun setUpTabs(){
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(HomeFragment(), "Home")
+        adapter.addFragment(ProfileFragment(), "Profile")
+        viewPager.adapter = adapter
+        tabs.setupWithViewPager(viewPager)
 
-        val newItem = ExampleItem(
-            R.drawable.ic_android,
-            "New item at position $index",
-            "Line 2"
-        )
-
-        exampleList.add(index, newItem)
-        adapter.notifyItemInserted(index)
+        tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_home_24)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_person_24)
     }
 
-    fun removeItem(view: View){
-        val index =  Random.nextInt(8)
 
-        exampleList.removeAt(index)
-        adapter.notifyItemRemoved(index)
-    }
-
-    override fun onItemClick(position: Int) {
-        Toast.makeText(this,"Item $position clicked", Toast.LENGTH_SHORT).show()
-        val clickedItem = exampleList[position]
-        clickedItem.text1 = "Clicked"
-        adapter.notifyItemChanged(position)
-    }
-
-    private fun generateDummyList(size: Int): ArrayList<ExampleItem> {
-        val list = ArrayList<ExampleItem>()
-        for (i in 0 until size) {
-            val drawable = when (i % 3) {
-                0 -> R.drawable.ic_android
-                1 -> R.drawable.ic_audio
-                else -> R.drawable.ic_sun
-            }
-            val item = ExampleItem(drawable, "Item $i", "Line 2")
-            list += item
-        }
-        return list
-    }
 }

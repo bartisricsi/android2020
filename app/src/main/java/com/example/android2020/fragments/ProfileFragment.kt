@@ -7,13 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.android2020.Adapter
 import com.example.android2020.ExampleItem
 import com.example.android2020.R
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.itemsecond.*
 
 
 class ProfileFragment : Fragment() {

@@ -9,9 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android2020.Adapter
 import com.example.android2020.ExampleItem
-import com.example.android2020.MainActivity
 import com.example.android2020.R
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlin.random.Random
 

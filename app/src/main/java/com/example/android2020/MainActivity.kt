@@ -2,6 +2,7 @@ package com.example.android2020
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android2020.fragments.EditProfile
 import com.example.android2020.fragments.HomeFragment
 import com.example.android2020.fragments.ProfileFragment
 import com.example.android2020.fragments.adapters.ViewPagerAdapter
@@ -22,11 +23,13 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(HomeFragment(), "Home")
         adapter.addFragment(ProfileFragment(), "Profile")
+        adapter.addFragment(EditProfile(),"Edit Profile")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
         tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_home_24)
         tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_person_24)
+        tabs.getTabAt(2)!!.setIcon(R.drawable.ic_android)
     }
 
 

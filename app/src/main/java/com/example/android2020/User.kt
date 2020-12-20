@@ -13,4 +13,6 @@ class User {
         this.email = email
 
     }
+
+    constructor(){}
 }

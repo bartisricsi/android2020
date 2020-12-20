@@ -97,28 +97,25 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
-                android:text="E-mail"
+                android:text="Name"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/white">
             </TextView>
 
-            <EditText
+            <TextView
                 android:id="@+id/text_view_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="e_mail"
+                android:text="Blank"
+                android:textSize="22sp"
                 android:textAlignment="center"
                 android:inputType="textEmailAddress"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/iddd"
                 android:textColor="@color/white"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/emailbutton"
-                android:layout_below="@+id/iddd"/>
+
 
             <TextView
                 android:id="@+id/iddd2"
@@ -133,23 +130,53 @@
                 android:layout_below="@id/text_view_2">
             </TextView>
 
-            <EditText
+            <TextView
                 android:id="@+id/text_view_22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="phone_number"
+                android:text="Blank"
+                android:textSize="22sp"
                 android:textAlignment="center"
                 android:inputType="textEmailAddress"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/iddd2"
                 android:textColor="@color/white"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/emailbutton2"
-                android:layout_below="@+id/iddd2"/>
 
+            <TextView
+                android:id="@+id/iddd3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="E-mail"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_below="@id/text_view_22">
+            </TextView>
+
+            <TextView
+                android:id="@+id/text_view_222"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Blank"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:inputType="textEmailAddress"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/iddd3"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Update"
+                android:layout_alignParentBottom="true"/>
 
 
 
